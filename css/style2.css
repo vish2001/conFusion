@@ -1,0 +1,36 @@
+.row-header{
+    margin: 0px auto;
+    padding:0px auto;
+}
+.row-content{
+    border-bottom: 1px ridge;
+}
+.myrow{
+    justify-content: stretch;
+}
+.space{
+    margin:0px auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+}
+.jumbotron{
+    padding:70px 30px 70px 30px;
+    margin:0px auto;
+    background-color: #9575cd;
+    color: floralwhite;
+}
+
+.footer{
+    background-color: #D1C4E9;
+    margin: 0px auto;
+    padding:20px 0px 20px 0px ;
+}
+body{
+    padding: 50px 0px 0px 0px;
+    z-index: 0;
+
+}
+.navbar-dark{
+    background-color: #512da8;
+}
