@@ -15,6 +15,14 @@
         float: none;
         width:100%;
      }
+     .card-header{
+         background-color: rgb(252, 248, 44);
+         width:100%;
+     }
+     #btn1{
+         background-color: gold;
+         color:black;
+     }
     </style>
     <title>Ristorante Con Fusion</title>
 </head>
@@ -47,8 +55,11 @@
                     <h1>Ristorante con Fusion</h1>
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                 </div>
-                <div class="col-12 col-sm-6 align-self-center">
+                <div class="col-12 col-sm-3 align-self-center">
                     <img src="img/logo.png" class="img-fluid">
+                </div>
+                <div class="col-12 col-sm-3 align-self-center">
+                    <a href="#res"> <button id="btn1" class="btn-sm">Reserve Table</button></a>
                 </div>
             </div>
         </div>
@@ -76,17 +87,28 @@
     
             </div>
         </div>
-
-
         <div class="row row-content align-items-center">
-            <div class="col-12 col-sm-4 col-md-3">
+            <div class="col-12 col-sm-4 order-sm-first col-md-3">
                 <h3>This Month's Promotions</h3>
             </div>
-            <div class="col col-sm order-sm-first col-md">
-                <h2>Weekend Grand Buffet</h2>
-                <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
+            <div class="col col-sm order-sm-last col-md">
+                <div class="media">
+                    <div class="media-body">
+                        <h2 class="mt-0">Weekend Grand Buffet
+                        <span class="badge badge-danger">NEW</span>
+                        </h2>
+                        <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
+                    </div>
+                    &nbsp; &nbsp; &nbsp;
+                    <img class="d-flex mr-3 img-thumbnail align-self-center"
+                    src="img/buffet.png" alt="buffet">
+                </div>
+    
             </div>
         </div>
+
+
+      
 
         <div class="row row-content align-items-center">
             <div class="col-12 col-sm-4 order-sm-last col-md-3">
@@ -108,6 +130,45 @@
                 </div>
                    
             </div>
+        </div>
+        <div class="row row-content align-items-center" id="res">
+          <div class=" col-12 col-sm-8 offset-2 mx-auto">
+          <div class="card  bg-light">
+            <h3 class="card-header  text-white" id="cardhead">Reserve a table</h3>
+            <div class="card-body">
+            <form>
+                <div class="form-group row">
+                    <label for="guest" class="col-md-2 col-form-label">number of Guests</label>
+                    <div class="col-md-10">
+                        <input type="radio" name="r1"> 1 &nbsp;
+                        <input type="radio" name="r1"> 2 &nbsp;
+                        <input type="radio" name="r1"> 3 &nbsp;
+                        <input type="radio" name="r1"> 4 &nbsp;
+                        <input type="radio" name="r1"> 5 &nbsp;
+                        <input type="radio" name="r1"> 6 &nbsp;
+
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="guest" class="col-md-2 col-form-label">Date and Time</label>
+                    <div class="col-md-4">
+                     
+                     <input placeholder="Date"  type="text" onfocus="(this.type='date')" >
+                    </div>
+                    <div class="col-md-4">
+                     <input type="text" placeholder="Time" onfocus="(this.type='time')">
+                       </div>
+                </div>
+                <div class="col-2 offset-2">
+                <button class="bg-primary text-white">
+                    Reserve
+                </button>
+
+                </div>
+                 </form>
+                </div>
+          </div> 
+          </div>
         </div>
     </div>
 
