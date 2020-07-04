@@ -10,6 +10,53 @@
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
+    .row-header{
+    margin: 0px auto;
+    padding:0px auto;
+}
+.row-content{
+    margin:0px auto;
+    padding:50px 0px 50px 0px;
+    border-bottom: 1px ridge;
+    min-height: 400px;
+}
+.footer{
+    background-color: #D1C4E9;
+    margin: 0px auto;
+    padding:20px 0px 20px 0px ;
+}
+.jumbotron{
+    padding:70px 30px 70px 30px;
+    margin:0px auto;
+    background-color: #9575cd;
+    color: floralwhite;
+}
+.address{
+    font-size:80%;
+    margin:0px;
+    color:#0f0f0f;
+}
+body{
+    padding: 50px 0px 0px 0px;
+    z-index: 0;
+
+}
+.navbar-dark{
+    background-color: #512da8;
+}.carousel {
+    background:#512DA8;
+}
+
+.carousel-item {
+  height: 300px;
+}
+
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px;
+}
     #navbar .nav li {
         display: block;
         float: none;
@@ -22,7 +69,14 @@
      #btn1{
          background-color: gold;
          color:black;
+         
      }
+     #carouselButton {
+    right:0px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+}
     </style>
     <title>Ristorante Con Fusion</title>
 </head>
@@ -59,9 +113,70 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <a href="#res"> <button id="btn1" class="btn-sm">Reserve Table</button></a>
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" style="color:white;">
+                        RESERVE TABLE
+                    </button>
+                    <div class="modal"  id="exampleModal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" style="color:black;"><b>RESERVE A TABLE</b></h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body ">
+                                <div class="container-fluid">
+                                      <form>
+                                          <div class="form-group row">
+                                              <label for="guest" class="col-3 col-form-label" style="color:black;">Number of Guests</label>
+                                              <div class="col-9">
+                                                  <input type="radio" name="r1"> <b style="color:black;">1</b> &nbsp;
+                                                  <input type="radio" name="r1"> <b style="color:black;">2</b> &nbsp;
+                                                  <input type="radio" name="r1"> <b style="color:black;">3</b> &nbsp;
+                                                  <input type="radio" name="r1"> <b style="color:black;">4</b> &nbsp;
+                                                  <input type="radio" name="r1"> <b style="color:black;">5</b> &nbsp;
+                                                  <input type="radio" name="r1"> <b style="color:black;">6</b>&nbsp;
+                          
+                                              </div>
+                                          </div>
+                                          <div class="form-group row">
+                                              <div class="col-3">
+                                                  <label style="color:black;">Section: </label>
+                                              </div>
+                                              <div class="col-9">
+                                              <div class="btn-group" data-toggle="button" role="group">
+                                                <a role="radio" class="btn btn-success" aria-checked="true" ><i style="color:white;" >NON-SMOKING</i></a>
+                                                <a role="radio" class="btn btn-danger"><i style="color:white;">SMOKING</i></a>
+                                            </div>
+                                            </div>
+                                          </div>
+                                          <div class="form-group row">
+                                            <div class="col-3">
+                                            <label for="guest" class="col-form-label" style="color:black;">Date and Time</label>
+                                            </div>
+                                            <div class="col-3">
+                                             
+                                             <input placeholder="Date"  type="text" onfocus="(this.type='date')" >
+                                            </div>
+                                            
+                                            <div class="col-2">
+                                           <input type="text" placeholder="Time" onfocus="(this.type='time')">
+                                           </div>
+                                           </div>
+                               <div class="form-group row"> 
+                                <div class="col-8 offset-3">
+                              <button type="button" class="btn btn-secondary align-self-center" data-dismiss="modal" >Cancel</button>&nbsp;
+                              <button type="button" class="btn btn-primary align-self-center">Reserve</button>
+                            </div>
+                            </div>
+                        </form>
+                          </div>
+                        </div>
+                      </div>
                 </div>
             </div>
+        </div>
         </div>
     </header>
 
@@ -111,52 +226,20 @@
                         <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </a>
+                        <div class="btn-group" id="carouselButton">
+                            <button class="btn btn-danger btn-sm" id="carousel-pause">
+                                <span class="fa fa-pause"></span>
+                            </button>
+                            <button class="btn btn-danger btn-sm" id="carousel-play">
+                                <span class="fa fa-play"></span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
  
-        <div class="row row-content align-items-center" id="res">
-          <div class=" col-12 col-sm-8 offset-2 mx-auto">
-          <div class="card  bg-light">
-            <h3 class="card-header  text-white" id="cardhead">Reserve a table</h3>
-            <div class="card-body">
-            <form>
-                <div class="form-group row">
-                    <label for="guest" class="col-md-2 col-form-label">number of Guests</label>
-                    <div class="col-md-10">
-                        <input type="radio" name="r1"> 1 &nbsp;
-                        <input type="radio" name="r1"> 2 &nbsp;
-                        <input type="radio" name="r1"> 3 &nbsp;
-                        <input type="radio" name="r1"> 4 &nbsp;
-                        <input type="radio" name="r1"> 5 &nbsp;
-                        <input type="radio" name="r1"> 6 &nbsp;
-
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="guest" class="col-md-2 col-form-label">Date and Time</label>
-                    <div class="col-md-4">
-                     
-                     <input placeholder="Date"  type="text" onfocus="(this.type='date')" >
-                    </div>
-                    <div class="col-md-4">
-                     <input type="text" placeholder="Time" onfocus="(this.type='time')">
-                       </div>
-                </div>
-                <div class="col-2 offset-2">
-                <button class="bg-primary text-white">
-                    Reserve
-                </button>
-
-                </div>
-                 </form>
-                </div>
-          </div> 
-          </div>
-        </div>
-    </div>
-
+       
     <footer class="footer">
         <div class="container">
             <div class="row">             
@@ -202,6 +285,19 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  
+<script>
+        $(document).ready(function(){
+            $("#mycarousel").carousel( { interval: 2000 } );
+            $("#carousel-pause").click(function(){
+                $("#mycarousel").carousel('pause');
+            });
+            $("#carousel-play").click(function(){
+                $("#mycarousel").carousel('cycle');
+            });
+        });
+    </script>
+
     
 </body>
 
